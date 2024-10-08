@@ -1,0 +1,19 @@
+services:
+  library:
+    image: postgres:alpine
+    container_name: library
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: student
+      POSTGRES_DB: libdb
+    ports:
+      - "15432:5432"
+  trains:
+    image: postgres:alpine
+    container_name: trains
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: student
+      POSTGRES_DB: traindb
+    ports:
+      - "25432:5432"
