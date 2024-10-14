@@ -1,0 +1,5 @@
+SELECT author
+FROM books
+GROUP BY author
+ORDER BY COUNT(*) DESC
+LIMIT 1;

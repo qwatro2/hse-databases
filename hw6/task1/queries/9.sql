@@ -1,0 +1,4 @@
+SELECT *
+FROM books
+ORDER BY year
+LIMIT 10;
