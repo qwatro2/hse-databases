@@ -36,8 +36,8 @@ alter table trains
 
 create table if not exists connections
 (
-    departure              date,
-    arrival                date,
+    departure              timestamp,
+    arrival                timestamp,
     departure_station_name varchar(255)
         references stations,
     arrival_station_name   varchar(255)
