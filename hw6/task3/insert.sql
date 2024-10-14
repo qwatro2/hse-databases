@@ -9,7 +9,8 @@ INSERT INTO Student (MatrNr, Name, Semester) VALUES
 INSERT INTO Professor (ProfNr, Name, Room) VALUES
 (201, 'PhD. Николай Федоров', 101),
 (202, 'PhD. Мария Петрова', 102),
-(203, 'PhD. Алексей Иванов', 103);
+(203, 'PhD. Алексей Иванов', 103),
+(204, 'PhD. Плохой Профессор', 104);
 
 INSERT INTO Lecture (LectNr, Title, Credit, ProfNr) VALUES
 (301, 'Math', 5, 201),
