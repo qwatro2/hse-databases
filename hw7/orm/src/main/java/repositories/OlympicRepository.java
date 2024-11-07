@@ -14,5 +14,5 @@ public interface OlympicRepository {
 
     Map<String, Object> getCountryWithHighestVowelPlayerPercentage();
 
-    List<Map<String, Object>> getCountriesWithLowestTeamMedalRatio2000();
+    List<String> getCountriesWithLowestTeamMedalRatio2000();
 }

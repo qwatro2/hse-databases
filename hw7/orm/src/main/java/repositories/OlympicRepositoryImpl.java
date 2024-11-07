@@ -104,7 +104,32 @@ public class OlympicRepositoryImpl implements OlympicRepository {
     }
 
     @Override
-    public List<Map<String, Object>> getCountriesWithLowestTeamMedalRatio2000() {
-        throw new NotImplementedException("Not implemented");
+    public List<String> getCountriesWithLowestTeamMedalRatio2000() {
+        String hql = "WITH ss AS materialized(" +
+                "SELECT c.name as name, COUNT(r.medal) / c.population as foo " +
+                "FROM Country c " +
+                "JOIN Player p ON c.countryId = p.country.id " +
+                "JOIN Result r ON p.playerId = r.player.id " +
+                "JOIN Event e ON r.event.id = e.id " +
+                "JOIN Olympics o ON e.olympics.id = o.olympicId " +
+                "WHERE o.year = 2000 AND e.isTeamEvent = 1 " +
+                "GROUP BY c.name, c.population " +
+                ") SELECT name FROM ss ORDER BY foo LIMIT 5";
+
+        String hql2 = "SELECT name FROM (" +
+                    "SELECT c.name as name, COUNT(r.medal) / c.population as avg" +
+                    "FROM Country c" +
+                    "JOIN Player p ON c.country_id = p.country_id" +
+                    "JOIN Result r ON p.player_id = r.played_id" +
+                    "JOIN Event e ON r.event_id = e.event_id" +
+                    "JOIN Olympics o ON e.olympic.olympics_id = o.olympic_id" +
+                    "WHERE o.year = 2000 AND e.is_team_event = 1" +
+                    "GROUP BY c.name, c.population" +
+                ") " +
+                "ORDER BY avg" +
+                "LIMIT 5";
+
+        Query<String> query = session.createQuery(hql, String.class);
+        return query.getResultList();
     }
 }

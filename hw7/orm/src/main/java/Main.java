@@ -29,7 +29,7 @@ public class Main {
         List<Event> task2;
         List<Map<String, String>> task3;
         Map<String, Object> task4;
-        List<Map<String, Object>> task5;
+        List<String> task5;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             OlympicRepository olympicRepository = new OlympicRepositoryImpl(session);
             task1 = olympicRepository.getBirthYearStatisticsFor2004();
@@ -43,7 +43,7 @@ public class Main {
         System.out.println("task2: " + task2);
         print("task3", task3);
         print("task4", List.of(task4));
-        print("task5", task5);
+        System.out.println("task5: " + task5);
 
         HibernateUtil.shutdown();
     }
