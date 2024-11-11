@@ -15,17 +15,16 @@ as $$
         select current_date into v_end_date;
         select j.min_salary into v_job_min_salary from jobs j where job_id = p_new_job_id;
 
-        if v_employee_department_id is null then
-            raise notice 'Employee does not exist';
-            return;
-        end if;
-
         insert into job_history values
         (p_employee_id, v_start_date, v_end_date, p_new_job_id, v_employee_department_id);
 
         update employees
         set hire_date = v_end_date, job_id = p_new_job_id, salary = v_job_min_salary + 500
         where employee_id = p_employee_id;
+
+        exception
+            when NOT_NULL_VIOLATION then
+                raise notice 'Employee does not exist';
     end
 $$;
 
