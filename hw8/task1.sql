@@ -1,11 +1,11 @@
 create procedure NEW_JOB(
-    job_id varchar(10), 
-    job_title varchar(35), 
-    min_salary integer
+    p_job_id varchar(10), 
+    p_job_title varchar(35), 
+    p_min_salary integer
 )
 language sql
 as $$
-insert into jobs values (job_id, job_title, min_salary, 2 * min_salary);
+insert into jobs values (p_job_id, p_job_title, p_min_salary, 2 * p_min_salary);
 $$;
 
 call NEW_JOB('SY_ANAL', 'System Analyst', 6000);
