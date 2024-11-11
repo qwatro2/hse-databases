@@ -72,8 +72,8 @@ values  ('AD_PRES', 'President', 20080, 40000),
         ('MK_MAN', 'Marketing Manager', 9000, 15000),
         ('MK_REP', 'Marketing Representative', 4000, 9000),
         ('HR_REP', 'Human Resources Representative', 4000, 9000),
-        ('PR_REP', 'Public Relations Representative', 4500, 10500);
-        -- ('SY_ANAL', 'Systems Analyst', 6000, 12000);
+        ('PR_REP', 'Public Relations Representative', 4500, 10500),
+        ('SY_ANAL', 'Systems Analyst', 6000, 12000);
 
 insert into public.employees (employee_id, first_name, last_name, email, phone_integer, hire_date, job_id, salary, commission_pct, manager_id, department_id)
 values  (100, 'Steven', 'King', 'SKING', '515.123.4567', '2003-06-17', 'AD_PRES', 24000.00, null, null, 90),
@@ -181,7 +181,7 @@ values  (100, 'Steven', 'King', 'SKING', '515.123.4567', '2003-06-17', 'AD_PRES'
         (204, 'Hermann', 'Baer', 'HBAER', '515.123.8888', '2002-06-07', 'PR_REP', 10000.00, null, 101, 70),
         (205, 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '2002-06-07', 'AC_MGR', 12008.00, null, 101, 110),
         (206, 'William', 'Gietz', 'WGIETZ', '515.123.8181', '2002-06-07', 'AC_ACCOUNT', 8300.00, null, 205, 110),
-        -- (106, 'Valli', 'Pataballa', 'VPATABAL', '590.423.4560', '2022-12-15', 'SY_ANAL', 7000.00, null, 103, 60),
+        (106, 'Valli', 'Pataballa', 'VPATABAL', '590.423.4560', '2022-12-15', 'SY_ANAL', 7000.00, null, 103, 60),
         (500, 'A', 'B', 'email', '111.11.1111.111111', '2022-01-01', 'PU_CLERK', 1000.00, 0.00, 100, 50),
         (178, 'Kimberely', 'Grant', 'KGRANT', '011.44.1644.429263', '2007-05-24', 'SA_REP', 7000.00, 0.15, 149, 80);
 
@@ -233,5 +233,5 @@ values  (101, '1997-09-21', '2001-10-27', 'AC_ACCOUNT', 110),
         (176, '2006-03-24', '2006-12-31', 'SA_REP', 80),
         (176, '2007-01-01', '2007-12-31', 'SA_MAN', 80),
         (200, '2002-07-01', '2006-12-31', 'AC_ACCOUNT', 90),
-        -- (106, '2000-01-01', '2022-11-13', 'IT_PROG', 60),
+        (106, '2000-01-01', '2022-11-13', 'IT_PROG', 60),
         (101, '2004-10-28', '2005-03-15', 'AC_MGR', 110);
