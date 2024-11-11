@@ -35,10 +35,12 @@ alter table job_history disable trigger all;
 select * from employees;
 select * from job_history;
 
+begin;
 call add_job_hist(106, 'SY_ANAL');
 
 select * from employees;
 select * from job_history;
+commit;
 
 alter table employees enable trigger all;
 alter table jobs enable trigger all;
