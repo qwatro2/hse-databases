@@ -52,7 +52,8 @@ INSERT INTO repositories VALUES
 ('Project Beta', 300, 25, 'https://github.com/user/project-beta'),
 ('Project Gamma', 75, 5, 'https://gitlab.com/user/project-gamma'),
 ('Project Delta', 120, 8, 'https://bitbucket.org/user/project-delta'),
-('Project Omega', 500, 50, 'https://github.com/org/project-omega');
+('Project Omega', 500, 50, 'https://github.com/org/project-omega'),
+('Project Amogus', 3, 5, 'papkanagibator228.com/project-amogus-v.1.3.37');
 
 CREATE TABLE products (
     id integer primary key,
